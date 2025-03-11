@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	
+	<title>Unión de Crédito Agrícola del Mayo, S.A. de C.V.</title>
+
+	<link href="img/favicon-ucamayo.jpg" rel="icon">
+
+	<!-- Google Fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- CSS -->
+  <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/icofont/icofont.min.css" rel="stylesheet">
+  <link href="css/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="css/animate.css/animate.min.css" rel="stylesheet">
+  <link href="css/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="css/venobox/venobox.css" rel="stylesheet">
+  <link href="css/aos/aos.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+	<!-- Top Bar -->
+	<div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    	<div class="container d-flex">
+      		<div class="contact-info mr-auto">
+        		<i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@ucamayo.com.mx</a>
+        		<i class="icofont-phone"></i> (01642) 4220357, 4220029
+      		</div>
+      		<div class="social-links">
+      			<!--
+        		<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        		<a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+        		<a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        		<a href="#" class="skype"><i class="icofont-skype"></i></a>
+        		<a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a> -->
+      		</div>
+    	</div>
+  	</div>
+
+  	<!-- Header -->
+  	<header id="header" class="fixed-top">
+    	<div class="container d-flex align-items-center">
+
+      		<!-- <h1 class="logo mr-auto"><a href="index.html"><span>.</span></a></h1> -->
+      
+      		<a href="index.html" class="logo mr-auto"><img src="img/logo-ucamayo.png" alt=""></a>
+
+      		<nav class="nav-menu d-none d-lg-block">
+        		<ul>
+          			<li><a href="index.html">Inicio</a></li>
+          			<li><a href="about.html">¿Quiénes somos?</a></li>
+          			<li><a href="productos.html">Productos y servicios</a></li>
+          			<li><a href="entidades.html">Entidades</a></li>
+          			<li><a href="info.html">Información financiera</a></li>
+          			<li><a href="contacto.html">Contacto</a></li>
+        		</ul>
+      		</nav>
+
+    	</div>
+  	</header>
+
+  	<main id="main">
+  		
+  		<section id="upload-info" class="upload-info section-bg mt-lg-7 mt-5">
+  			<div class="container" data-aos="fade-up">
+  				
+  				<div class="section-title">
+          			<h2>Información Financiera</h2>
+          			<br>
+          			<h3>Carga de archivos de <span>información financiera</span></h3>
+        		</div>
+
+        		<!-- Crear carpeta nueva -->
+        		<div class="row">
+        			<div id="carpeta-nueva" class="col mb-3">
+        				<div>
+                    <h4>Crear carpeta</h4>
+                    <p>Se recomienda crear una carpeta por año. Cada carpeta es una sección en la página de <a href="info.html" target="_blank">estados financieros.</a></p>    
+                </div>
+               
+                <form action="save_dir.php" method="post" role="form" class="php-save-dir">
+                  <div class="form-group">
+                    <input type="text" name="nCarpeta" class="form-control" id="nCarpeta" placeholder="Ingrese el nombre de la carpeta a crear">
+                  </div>
+
+                  <div class="text-center"><button name="btnCrear" type="submit">Crear</button></div>
+                </form>
+
+        			</div>
+        		</div>
+
+        		<!-- Carga el archivo -->
+        		<div class="row">
+        			<div id="carga-info" class="col mb-3">
+                <div>
+                  <h4>Cargar archivo</h4>
+                  <p>Seleccione el archivo a cargar y la carpeta donde se guardará.</p>
+                </div>
+        				<form action="upload_info.php" method="post" role="form" class="php-upload-form" enctype="multipart/form-data">
+
+        					<!--<input type="hidden" name="MAX_FILE_SIZE" value="100000">-->
+
+                  <p>Carpetas existentes:</p>
+                  <div class="form-group">
+                    <select id="carpetas" name="carpetas" class="form-control"></select>
+                  </div>
+
+        					<div class="form-group">
+        						<input type="file" class="form-control" name="archivo" id="archivo" placeholder="Elige el archivo a subir">
+        					</div>
+
+        					<div class="text-center"><button name="btnSubir" type="submit">Cargar</button></div>
+        					
+        				</form>
+        			</div>
+        		</div>
+
+            <!-- Eliminar archivos y carpetas -->
+            <div class="row">
+              <div id="elimina-archivo" class="col">
+                <div>
+                  <h4>Eliminar archivos y carpetas</h4>
+                  <p>Seleccione el archivo o carpeta a eliminar y de clic al botón correspondiente.</p>
+                </div>
+                <div class="form-row">
+                  <p>Carpetas:</p>
+                  <div class="form-group col">
+                    <select id="carpetas2" name="carpetas2" class="form-control"></select>
+                  </div>
+                  <div class="form-group col">
+                    <button id="btnCelimina" name="btnCelimina" type="submit">Eliminar</button>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <p>Archivos:</p>
+                  <div class="form-group col">
+                    <select id="archivos" name="archivos" class="form-control"><option>Seleccione un archivo</option></select>
+                  </div>
+                  <div class="form-group col">
+                    <button id="btnAelimina" name="btnAelimina" type="submit">Eliminar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+  			</div>
+  		</section>
+
+  	</main>
+
+
+  	<footer id="footer">
+  	
+  	<div class="footer-top">
+  		<div class="container">
+  			<div class="row">
+  				
+  				<div class="col-lg-3 col-md-6 footer-links">
+            		<h4>Sitios de interes</h4>
+            		<ul>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.gob.mx/agroasemex" target="_blank">AGROASEMEX</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.cmdrs.gob.mx/Paginas/default.aspx" target="_blank">ASERCA</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.banxico.org.mx/" target="_blank">Banco México</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.buro.gob.mx/" target="_blank">Buró de Entidades Financieras</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.gob.mx/inifap" target="_blank">CIANO (inifap)</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.gob.mx/cnbv" target="_blank">Comisión Nacional Bancaria y de Valores</a></li>
+            		</ul>
+          		</div>
+
+          		<div class="col-lg-3 col-md-6 footer-links">
+          			<h4></h4>
+            		<ul>
+            			<li><i class="bx bx-chevron-right"></i> <a href="https://www.gob.mx/conagua" target="_blank">CONAGUA</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.condusef.gob.mx/" target="_blank">Condusef</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.gob.mx/fnd" target="_blank">Financiera Nacional de Desarrollo</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.fira.gob.mx/Nd/index.jsp" target="_blank">FIRA</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.hdi.com.mx/" target="_blank">HDI SEGUROS</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="http://idse.imss.gob.mx/imss/" target="_blank">IMSS - IDSE</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://kepler.com.mx/" target="_blank">KEPLER</a></li>
+            		</ul>
+          		</div>
+
+          		<div class="col-lg-3 col-md-6 footer-links">
+          			<h4></h4>
+            		<ul>
+              			<li><i class="bx bx-chevron-right"></i> <a href="http://portal.office365.com/" target="_blank">Portal Office 365 Ucamayo</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="https://www.gob.mx/agricultura" target="_blank">SAGARPA</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="http://sat.gob.mx/Paginas/Inicio.aspx" target="_blank">SAT</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="http://200.52.188.30/websre/" target="_blank">Sistema de Recepción y Embarques WEB</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="http://sumaempresarial.mx/" target="_blank">SUMA Empresarial</a></li>
+              			<li><i class="bx bx-chevron-right"></i> <a href="http://dsucamayo01.quickconnect.to/" target="_blank">Synology DS</a></li>
+            		</ul>
+          		</div>
+
+          		<div class="col-lg-3 col-md-6 footer-contact">
+            		<h4>Contacto</h4>
+            		<p>
+              			Av. Obregón y C. Otero <br>
+              			Navojoa, Sonora<br>
+              			México <br><br>
+              			<strong>Teléfonos:</strong> (01642) 4220357, 4220029<br>
+              			<strong>Email:</strong> contact@ucamayo.com.mx<br>
+            		</p>
+            		 <div class="social-links mt-3">
+              			<a href="https://www.facebook.com/ucamayo.sadecv.9" class="facebook"><i class="bx bxl-facebook"></i></a>
+              			<!--<a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              			<a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              			<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              			<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>-->
+            		</div>
+          		</div>
+
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Unión de Crédito Agrícola del Mayo S.A. de C.V</span></strong>. 
+      </div>
+      <div class="credits">
+      	Todos los derechos reservados.
+      </div>
+    </div>
+
+  </footer>
+
+	<!-- JS -->
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery.easing/jquery.easing.min.js"></script>
+  <script src="js/jquery-sticky/jquery.sticky.js"></script>
+  <script src="js/owl.carousel/owl.carousel.min.js"></script>
+  <script src="js/waypoints/jquery.waypoints.min.js"></script>
+  <script src="js/counterup/counterup.min.js"></script>
+  <script src="js/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="js/venobox/venobox.min.js"></script>
+  <script src="js/aos/aos.js"></script>
+  <script src="js/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+                    $.ajax({
+                            type: "GET",
+                            url: "fill_combo.php",
+                            data: {funcion: "carpetas"},
+                            success: function(response)
+                            {
+                                $('#carpetas').append('<option>Seleccione una carpeta</option>');
+                                $('#carpetas').append(response).fadeIn();
+                                $('#carpetas2').append('<option>Seleccione una carpeta</option>');
+                                $('#carpetas2').append(response).fadeIn();
+                            }
+                    });
+
+                    /*var Id = $("#carpetas2 option:selected" ).text();*/
+
+                    $('#carpetas2').on('change', function() {
+      
+                     var Id = $("#carpetas2 option:selected" ).text();
+                      $.ajax({
+                        type: "GET",
+                        url: "fill_combo.php",
+                        data: {funcion: "archivos", id: Id},
+                        success: function(response)
+                        {
+                          $('#archivos').html(response);
+                        }
+                      });
+                    });
+
+
+                    $('#btnCelimina').click(function (){
+
+                      var Carpeta = $("#carpetas2 option:selected").text();
+                      $.ajax({
+                        type: "GET",
+                        url: "delete_files.php",
+                        data: {funcion: "carpetas", carpeta: Carpeta},
+                        success: function(response)
+                        {
+                          alert(response);
+                          window.location.href = 'upload_info.html';
+                        },
+                        error: function()
+                        {
+                          alert('Error al eliminar la carpeta, intente de nuevo.');
+                          window.location.href = 'upload_info.html';
+                        }
+                      });
+
+                    });
+
+
+                     $('#btnAelimina').click(function (){
+
+                      var Carpeta = $("#carpetas2 option:selected").text();
+                      var Archivo = $("#archivos option:selected").text();
+                      $.ajax({
+                        type: "GET",
+                        url: "delete_files.php",
+                        data: {funcion: "archivos", carpeta: Carpeta, archivo: Archivo},
+                        success: function(response)
+                        {
+                          alert(response);
+                          window.location.href = 'upload_info.html';
+                        },
+                        error: function(response)
+                        {
+                          alert('Error al eliminar el archivo, intente de nuevo.');
+                          window.location.href = 'upload_info.html';
+                        }
+                      });
+
+                    });
+                });
+  </script>
+
+</body>
+</html>
